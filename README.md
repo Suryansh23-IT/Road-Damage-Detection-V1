@@ -1,50 +1,66 @@
+<div align="center">
+
 # 🚧 Road Damage Detection V1
 
-A simple **YOLO11-based road damage detection demo** built with Python and Flask.
+### YOLO11-powered road damage detection with a simple Flask web interface
 
-This project detects common road-surface defects from uploaded images using a custom-trained object detection model and displays the annotated result through a lightweight web interface.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![YOLO](https://img.shields.io/badge/YOLO11-111111?style=for-the-badge)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
+![Computer Vision](https://img.shields.io/badge/Computer%20Vision-0A66C2?style=for-the-badge)
 
-> V1 is an early prototype created to explore AI-based road damage detection before building a larger end-to-end road infrastructure platform.
+<br/>
 
----
+> A lightweight AI prototype for detecting cracks and potholes from road images.
 
-## ✨ Features
-
-- Upload road images through a web interface
-- Detect multiple road-damage categories using YOLO11
-- Display annotated output with bounding boxes
-- Show class-wise detection counts
-- Custom-trained model weights included
-- Simple Flask-based frontend/backend integration
+</div>
 
 ---
 
-## 🔍 Damage Classes
+## ✨ Overview
 
-The model is configured to detect:
+**Road Damage Detection V1** is an early computer vision prototype built to explore how AI can identify common road defects from images.
 
-- **D00** — Longitudinal Crack
-- **D10** — Transverse Crack
-- **D20** — Alligator Crack
-- **D40** — Pothole
-- **Other Corruption**
+The project combines:
+
+**YOLO11 model training → Flask backend → Web interface → Annotated detections**
+
+This version is mainly focused on validating the complete AI detection pipeline before moving toward a larger road-infrastructure platform.
 
 ---
 
-## 🧠 Model & Training
+## 🔍 Detects
 
-The model was trained using **YOLO11n** with transfer learning.
+| Code | Damage Type |
+|------|-------------|
+| D00 | Longitudinal Crack |
+| D10 | Transverse Crack |
+| D20 | Alligator Crack |
+| D40 | Pothole |
+| — | Other Corruption |
 
-Training configuration:
+---
 
-- Model: `yolo11n.pt`
-- Epochs: `100`
-- Image size: `640`
-- Batch size: `4`
-- Device: `CPU`
-- Optimizer: `SGD`
+## ⚡ Features
 
-The trained model is stored as:
+- 🖼️ Upload road images
+- 🤖 YOLO11-based object detection
+- 🎯 Bounding-box visualization
+- 📊 Class-wise damage counts
+- 🌐 Flask-powered web interface
+- 🧠 Custom-trained model weights
+- 🛠️ Training and dataset-conversion scripts included
+
+---
+
+## 🧠 Model
 
 ```text
-best.pt
+Base Model     : YOLO11n
+Epochs         : 100
+Image Size     : 640
+Batch Size     : 4
+Optimizer      : SGD
+Training       : CPU
+Weights        : best.pt
